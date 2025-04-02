@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Watch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background-color: #201e1e;
+            height: 100vh;
+            width: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    .container {
+        background-color: #0a0a0a;
+        height: 15rem;
+        width: 45rem;
+        border-radius: 20px;
+        border: 3px solid yellow;
+        box-shadow: 1px 10px 10px rgb(90, 90, 14);
+    }
+
+    .timeHolder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2.1rem;
+    }
+
+    /* .timeOptions {
+        background-color: #fff;
+        color: #fff;
+    } */
+    
+    p {
+        color: rgba(136, 31, 5, 0.816);
+        font-size: 7rem;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="clockHolder">
+            <div class="timeHolder">
+                <div class="timeOptions">
+                    <!-- <i class="fas fa-clock" data-title="Time"></i>
+                    <i class="fas fa-stopwatch" data-title="StopWatch"></i>
+                    <i class="far fa-clock" data-title="CountDown"></i> -->
+                </div>
+                <div class="mainDiv">
+                    <p id="clock"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const currentTime = () => {
+            let curTime = new Date().toLocaleTimeString();
+            document.getElementById("clock").innerText = curTime;
+        }
+        currentTime();
+        setInterval(() => {
+            currentTime();
+        }, 1000);
+
+    </script>
+</body>
+</html>
